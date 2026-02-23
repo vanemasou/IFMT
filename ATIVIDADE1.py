@@ -36,33 +36,84 @@ def q5():
 
 #6. Faça um programa que leia um número inteiro e imprima o seu
 #   antecessor e o seu sucessor.
-
+def q6():
+    num = int(input('Digite um número inteiro:      '))
+    print(f'Sucessor: (num+1)')
 
 
 #7. Faça um programa que leia o nome o endereço e o telefone de
 #   um cliente e ao final, imprima esses dados.
-
+def q7():
+    nome = input('nome: ')
+    endereço = input ('endereço: ')
+    telefone = input ('Telefone: ')
+    print('NOME\t\tEND\T\TFONE') #t é a tabulação (TAB) e \n é new line (quebra de linha)
+    print(f'(nome)\t\t(endereço)\t\t(telefone)')
+    
 #8. Faça um programa que leia dois números inteiros e imprima a
 #   subtração deles.
-
+def q8():
+    num1 = int(input('1 Número:  '))
+    num2 = int(input('2 Número:  '))
+    print(f'(num1)-(num2) = (num1-num2)')
+    
 #9. Faça um programa que leia um número real e imprima ¼ deste número.
-
+def q9():
+    num = float(input('Digite um número real: '))
+    print(f'¼ de (num) = (num\4)')
+    
 #10. Faça um programa que leia três números reais e calcule a
 #    média aritmética destes números. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
-
+def q10():
+    num = float(input('1 Número Real: '))
+    num = float(input('2 Número Real: '))
+    num = float(input('3 Número Real: '))
+    média = (num1 + num2 + num3) / 3
+    print(f'Média de (num1), (num2), (num3) é igual a (média:.2f)')
+    
 #11. Faça um programa que leia dois números reais e calcule as
 #    quatro operações básicas entre estes dois números, adição,
 #    subtração,multiplicação e divisão. Ao final, o programa
 #    deve imprimir os resultados dos cálculos.
+def q11():
+    num1 = float(input('1 Número: '))
+    num2 = float(input('2 Número: '))
+    print(f'(num1) + (num2) = (num1 + num2)')
+    print(f'(num1) - (num2) = (num1 - num2)')
+    print(f'(num1) * (num2) = (num1 * num2)')
+    print(f'(num1) / (num2) = (num1 / num2)')
 
+    
 #12. Faça um programa que leia um número real e calcule o
 #    quadrado deste número. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
 
+def q12():
+    num = float(input('Digite um número real: '))
+    print(f'{num}*{num} = {num*num}')
+    print(f'math.pow({num},2) = {math.pow(num,2)}')
+    print(f'{num}**2 = {num**2}')
+
 #13. Faça um programa que leia o saldo de uma conta poupança e
 #    imprima o novo saldo, considerando um reajuste de 2%.
+def q13():
+    saldo = float(input('Digite o saldo da conta: R$   '))
+    saldo = round(saldo, 2) #Arredonda para 2 casa decimais
+    print(f'Saldo de  {saldo:.2f} + 2% = R$ {Saldo*1.02 + saldo}')
+def q14():
+    base = float(input('Digite a base do retangulo:  '))
+    altura = float(input('Digite a altura do retângulo'  ))
+    print(f'Perimetro = {base*2 + altura*2}')
+    print(f'Area: {base*altura}')
 
+def q15():
+    valor = round(float(input('Valor do produto: R$  ')), 2)
+    desconto_desejado = float(input{'% do desconto:.2f})
+    valor_desconto = valor*desconto_desejado/100
+    print(f'Valor do desconto R$ {valor_desconto:.2f}')
+    print(f'Valor final do produto: R$ {valor-valor_desconto:.2f}')
+    
 #14. Faça um programa que leia a base e a altura de um retângulo
 #    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).    
 
@@ -104,3 +155,8 @@ def q5():
 #20. Faça um programa que efetue a apresentação do valor da conversão
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
 #    necessário também ler o valor da cotação do dólar.
+
+
+
+
+questao = input('Digite a questao a ser execultada: 
