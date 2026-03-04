@@ -101,11 +101,19 @@ def q13():
     saldo = float(input('Digite o saldo da conta: R$   '))
     saldo = round(saldo, 2) #Arredonda para 2 casa decimais
     print(f'Saldo de  {saldo:.2f} + 2% = R$ {Saldo*1.02 + saldo}')
+
+#14. Faça um programa que leia a base e a altura de um retângulo
+#    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).
+
 def q14():
     base = float(input('Digite a base do retangulo:  '))
     altura = float(input('Digite a altura do retângulo'  ))
     print(f'Perimetro = {base*2 + altura*2}')
     print(f'Area: {base*altura}')
+
+#15. Faça um programa que leia o valor de um produto, o percentual
+#    do desconto desejado e imprima o valor do desconto e o valor
+#    do produto subtraindo o desconto.
 
 def q15():
     valor = round(float(input('Valor do produto: R$  ')), 2)
@@ -114,12 +122,7 @@ def q15():
     print(f'Valor do desconto R$ {valor_desconto:.2f}')
     print(f'Valor final do produto: R$ {valor-valor_desconto:.2f}')
     
-#14. Faça um programa que leia a base e a altura de um retângulo
-#    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).    
-
-#15. Faça um programa que leia o valor de um produto, o percentual
-#    do desconto desejado e imprima o valor do desconto e o valor
-#    do produto subtraindo o desconto.
+    
 
 #16. Faça um programa que calcule o reajuste do salário de um
 #    funcionário. Para isso, o programa deverá ler o salário atual
