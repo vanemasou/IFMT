@@ -37,38 +37,120 @@ def exemploCaso():      # serve apenas para valores conhecidos (poucos) e exatos
 
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
+def q1():
+    num1 = int(input('Digite um inteiro: '))
+    num2 = int(input('Digite outro inteiro: '))
+    adicao = num1 + num2
+    if adicao > 10:
+        print(f'{num1} + {num2} = {adicao}')
 
 #2. Faça um programa que leia dois valores inteiros e efetue a adição.
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
 #   somando-se a ele mais 8, caso o valor somado seja menor ou igual a
 #   20, este deverá ser apresentado subtraindo-se 5.
-
+def q2():
+    num1 = int(input('Digite um inteiro: '))
+    num2 = int(input('Digite outro inteiro: '))
+    adicao = num1 + num2
+    if adicao > 20:
+        print(f'{num1} + {num2} + 8 = {adicao+8}')
+    else:
+        print(f'{num1} + {num2} - 5 = {adicao-5}')
+        
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
+def q3():
+    num = int(input('Digite um numero inteiro: '))
+    if num % 3 == 0: # se o resto da divisão é zero
+        print(f'{num} é múltiplo de 3')
+    else:
+        print(f'{num} não é múltiplo de 3')
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
+def q4():
+    num = int(input('Digite um numero inteiro: '))
+    if num % 5 == 0: # se o resto da divisão é zero
+        print(f'{num} é divisível por 5')
+    else:
+        print(f'{num} não é divisível por 5')
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
+def q5():
+    num = int(input('Digite um numero inteiro: '))
+    if num % 3 == 0 and num % 7 == 0: # se o resto da divisão é zero
+        print(f'{num} é divisível por 3 e 7')
+    else:
+        print(f'{num} não é divisível por 3 e 7')
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
+def q6():
+    salario = float(input('Salário: R$ '))
+    prestacao = float(input('Valor da prestação: R$ '))
+    prestacao_maxima = salario * 0.3
+    if prestacao > prestacao_maxima:
+        print(f'Crédito não autorizado. Prestação máxima: R$ {prestacao_maxima}')
+    else:
+        print(f'Crédito concedido!')
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
+def q7():
+    numero = random.randrange(100) # gera número aleatório entre 0 e 99
+    if numero >= 20 and numero <=50: # if 20<=numero<=50:
+        print(f'{numero} está no intervalo 20...50.')
+    else:
+        print(f'{numero} está fora do intervalo 20...50')
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+def q8():
+    numero = random.randrange(100)
+    if numero > 20:
+        print(f'{numero} é maior do que 20.')
+    elif numero == 20:
+        print(f'{numero} é igual a 20.')
+    else:
+        print(f'{numero} é menor do que 20.')
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
+def q9():
+    nascimento = int(input('Ano de Nascimento: '))
+    if 1900<=nascimento<=datetime.now().year:
+        idade = datetime.now().year - nascimento
+        print(f'A pessoa tem {idade} anos!')
+    else:
+        print('Ano de nascimento inválido!')
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
+def q10():
+    a = inputint('Digite um número inteiro: ')
+    b = inputint('Digite um número inteiro: ')
+    c = inputint('Digite um número inteiro: ')
+    resultado=""
+    resultado += f"{a} {b} {c}" if a<b<c else ""
+    resultado += f"{a} {c} {b}" if a<c<b else ""
+    resultado += f"{b} {a} {c}" if b<a<c else ""
+    resultado += f"{b} {c} {a}" if b<c<a else ""
+    resultado += f"{c} {a} {b}" if c<a<b else ""
+    resultado += f"{c} {b} {a}" if c<b<a else ""
+    print(resultado)
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
+def q11():
+    maior = inputint('Digite um número inteiro: ')
+    numero = inputint('Digite um segundo número: ')
+    if numero > maior:
+        maior = numero
+    numero = inputint('Digite um terceiro número: ')
+    if numero > maior:
+        maior = numero
+    print(f'O maior número informado é {maior}')    
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
