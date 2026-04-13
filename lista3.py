@@ -156,7 +156,10 @@ def q12() -> Nome:
 # um aporte mensal regular e uma taxa de retorno mensal constante.
 
 def q121() -> Nome:
-    
+    saldo: float = inputfloat('Saldo Inicial: R$ ', min=0)
+    aporte: float = inputfloat('Aporte mensal: R$ ', min=0)
+    taxa: float = inputfloat('Taxa de retorno mensal (%): '. min=0.1)
+    mes = 0
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
