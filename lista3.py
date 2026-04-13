@@ -1,8 +1,13 @@
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
-from util import inputint, inputfloat
+from util import inputint, inputfloat, gerar_palavra
 import random
+from typing import Final
+
+VERMELHO: Final = '\033[31m'
+VERDE: Final = '\033[32m'
+RESET: Final = '\033[m'
 
 def exemploPara(): # Quando se sabe a qtde de repetições
     for c in range(10): #0-9 Baseado em intervalo (inicio e fim)
@@ -10,6 +15,7 @@ def exemploPara(): # Quando se sabe a qtde de repetições
     for c in range(1,10): #1-9
         print(c)
     for c in range(1,10,2): #1,3,5,7,9
+        print(c)
 
 def exemploEnquanto(): # Quando não se sabe quantas iterações serão necessárias
     opcao=-1
@@ -27,14 +33,31 @@ def q2():
         print(c, end=' ')
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
+def q3():
+    for c in range(5,500,5):
+        print(c, end=' ')
 
 #4. Faça um programa que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
+def q4() -> None:
+    for _ in range(20):
+        nome: str = gerar_palavra()
+        idade: int = random.randrange(0,121)
+        sexo: str = random.choice(('M','F'))
+        if sexo == 'M' and idade >= 21:
+            print(f'A pessoa {nome:10} de sexo {sexo} tem {idade} anos.')
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
+def q5() -> None:
+    multiplicando: int = inputint('Multiplicando: ')
+    multiplicador: int = inputint('Multiplicador: ')
+    produto: int = 0
+    for _ in range(multiplicando):
+        produto += multiplicador
+    print(f'{multiplicando} * {multiplicador} = {produto}')
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
@@ -42,11 +65,32 @@ def q2():
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
 # 1 1 2 3 5 8 13 21
+def q6() -> None:
+    anterior: int = 0
+    atual: int = 1
+    for _ in range(20):
+        print(atual, end=' ')
+        proximo = atual + anterior
+        anterior = atual
+        atual = proximo
 
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
+def q7() -> None:
+    QTDE_ALUNOS: Final = 15
+    diario = f'{'NOME':<11}{'N1':>5}{'N2':>5}{'MEDIA':^7}\n\n'
+    media_geral: float = 0.0
+    for _ in range(QTDE_ALUNOS):
+        nome: str = gerar_palavra()
+        prova1: float = round(random.random()*10,1)
+        prova2: float = round(random.random()*10,1)
+        media: float = round((prova1 + prova2)/2,1)
+        media_geral += media
+        diario += f'{nome:<11}{prova1:>5}{prova2:>5}{VERMELHO if media < 6 else VERDE}{media:>5}{RESET}\n'
+    print(diario)
+    print(f'\nMédia da Turma: {media_geral/QTDE_ALUNOS:.1f}')
 
 #8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
@@ -278,6 +322,8 @@ def q2():
 #analisadas.
 #Obs.: Para encerrar a entrada de dados, digite um número menor que zero para a
 #idade.
+def q30() -> None:
+    raise NotImplementedError('q30() ainda não foi codificada')
 
 questao = int(input('Questão a ser executada: '))
 eval(f'q{questao}()')
