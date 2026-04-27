@@ -25,6 +25,12 @@ def q1() -> None:
 #2. Faça um programa que armazene 10 letras em uma lista e imprima uma listagem
 #numerada. (ASCII 65-90)
 
+def q2() -> None:
+    letras: list = [chr(random.randrange(65,91)) for _ in range(10)]
+    # tipo enumerate cria automaticamente um contador para os elementos da lista começando em 0
+    for posicao, letra in enumerate(letras):
+        print(f'[{posicao}]: {letra}')
+        
 #2.1 Faça um programa que peça ao usuário para informar a qtde de caracteres
 # para a geração de uma senha aleatória. Ao final o programa deve exibir a
 # senha sugerida. (ASCII 40-126)
